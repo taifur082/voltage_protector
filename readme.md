@@ -9,7 +9,6 @@ voltage-protector/
 ├── src/voltage_protector.ino          firmware
 ├── project_files/diagram.json         Wokwi circuit
 ├── project_files/libraries.txt
-├── schematics/
 ├── test_evidence/                     
 └── readme.md
 ```
