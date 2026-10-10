@@ -11,7 +11,6 @@ voltage-protector/
 ├── project_files/libraries.txt
 ├── schematics/
 ├── test_evidence/                     
-├── design_document.pdf                one-page design note
 └── readme.md
 ```
 
