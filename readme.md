@@ -38,7 +38,8 @@ voltage-protector/
    - Adafruit BusIO
 5. Press **Save**, then **Start Simulation**.
 6. Open the **Serial Monitor** at the bottom. It is already wired. Baud in the sketch is 115200.
-my project link: https://wokwi.com/projects/477505593298122753
+
+### My project link: https://wokwi.com/projects/477505593298122753
 
 ### What a healthy start looks like
 
