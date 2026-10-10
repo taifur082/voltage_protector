@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "author": "Taifur Rahman",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 144.54,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": 12.74,
+      "left": 493.83,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potv",
+      "top": -78.6,
+      "left": -144.2,
+      "attrs": { "value": "784" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "poti",
+      "top": 96.2,
+      "left": -144.2,
+      "attrs": { "value": "102" }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 268.6,
+      "left": -19.2,
+      "attrs": { "label": "Load" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "loadled",
+      "top": 351.6,
+      "left": 176.6,
+      "attrs": { "color": "green", "label": "Appliance" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rload",
+      "top": 338.4,
+      "left": 96.05,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "faultled",
+      "top": -61.2,
+      "left": 339.8,
+      "attrs": { "color": "red", "label": "Fault" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rfault",
+      "top": -44.4,
+      "left": 259.25,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz",
+      "top": 150.6,
+      "left": 384.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnm",
+      "top": 246.2,
+      "left": 432,
+      "attrs": { "color": "blue", "label": "Menu", "key": "m" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnu",
+      "top": 342.2,
+      "left": 432,
+      "attrs": { "color": "green", "label": "Up", "key": "u" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnd",
+      "top": 438.2,
+      "left": 432,
+      "attrs": { "color": "grey", "label": "Down", "key": "d" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "esp:3V3", "potv:VCC", "red", [] ],
+    [ "potv:GND", "esp:GND.1", "black", [] ],
+    [ "potv:SIG", "esp:34", "gold", [] ],
+
+    [ "esp:3V3", "poti:VCC", "red", [] ],
+    [ "poti:GND", "esp:GND.1", "black", [] ],
+    [ "poti:SIG", "esp:35", "orange", [] ],
+
+    [ "esp:5V", "relay:VCC", "red", [] ],
+    [ "relay:GND", "esp:GND.1", "black", [] ],
+    [ "esp:26", "relay:IN", "green", [] ],
+    [ "esp:3V3", "rload:1", "red", [] ],
+    [ "rload:2", "loadled:A", "green", [] ],
+    [ "loadled:C", "relay:NO", "green", [] ],
+    [ "relay:COM", "esp:GND.1", "black", [] ],
+
+    [ "oled:VCC", "esp:3V3", "red", [] ],
+    [ "oled:GND", "esp:GND.3", "black", [] ],
+    [ "oled:SDA", "esp:21", "blue", [] ],
+    [ "oled:SCL", "esp:22", "blue", [] ],
+
+    [ "esp:18", "rfault:1", "red", [] ],
+    [ "rfault:2", "faultled:A", "red", [] ],
+    [ "faultled:C", "esp:GND.2", "black", [] ],
+
+    [ "esp:25", "bz:2", "purple", [] ],
+    [ "bz:1", "esp:GND.2", "black", [] ],
+
+    [ "btnm:1.l", "esp:16", "blue", [] ],
+    [ "btnm:2.l", "esp:GND.3", "black", [] ],
+    [ "btnu:1.l", "esp:17", "green", [] ],
+    [ "btnu:2.l", "esp:GND.3", "black", [] ],
+    [ "btnd:1.l", "esp:4", "gray", [] ],
+    [ "btnd:2.l", "esp:GND.3", "black", [] ]
+  ],
+  "dependencies": {}
+}

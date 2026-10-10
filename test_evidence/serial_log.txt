@@ -1,0 +1,38 @@
+[BOOT] ESP32 voltage protector
+[BOOT] stand-in sensors only, no mains
+[BOOT] OV 250 V  OC 10.0 A  delay 5 s  auto ON
+[BOOT] type HELP
+[RELAY] CLOSED load on
+[NORMAL] boot  V=216 I=3.0
+[STATUS] NORMAL  load=ON  V=216 limit=250  I=3.0 limit=10.0
+[STATUS] delay=5 s  auto=ON  hyst=8V/0.5A  trip=100 ms  rawV=2942 rawI=408
+[STATUS] NORMAL  load=ON  V=216 limit=250  I=3.0 limit=10.0
+[STATUS] delay=5 s  auto=ON  hyst=8V/0.5A  trip=100 ms  rawV=2942 rawI=408
+[STATUS] NORMAL  load=ON  V=216 limit=250  I=3.0 limit=10.0
+[STATUS] delay=5 s  auto=ON  hyst=8V/0.5A  trip=100 ms  rawV=2942 rawI=408
+[SET] SERIAL OV 200 V
+[RELAY] OPEN load off
+[TRIP] t=291761 ms OVERVOLTAGE  V=216/200  I=3.0/10.0
+[CLEAR] timer 5 s
+[RELAY] CLOSED load on
+[NORMAL] timer  V=176 I=3.0
+[SET] BUTTON OV 205 V
+[SET] BUTTON OV 210 V
+[SET] BUTTON OV 205 V
+[SET] BUTTON OV 200 V
+[RESET] SERIAL ignored, already normal
+[RELAY] OPEN load off
+[TRIP] t=423489 ms OVERCURRENT  V=176/200  I=15.7/10.0
+[CLEAR] timer 5 s
+[RELAY] CLOSED load on
+[NORMAL] timer  V=176 I=8.2
+[SET] SERIAL AUTO OFF
+[RESET] SERIAL ignored, already normal
+[RELAY] OPEN load off
+[TRIP] t=453513 ms OVERCURRENT  V=176/200  I=13.9/10.0
+[RESET] SERIAL refused, fault still present  V=176 I=13.9
+[SET] SERIAL AUTO ON
+[RESET] SERIAL refused, fault still present  V=176 I=13.9
+[CLEAR] timer 5 s
+[RELAY] CLOSED load on
+[NORMAL] timer  V=79 I=8.0
